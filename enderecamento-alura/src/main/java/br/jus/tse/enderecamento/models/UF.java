@@ -19,7 +19,7 @@ public class UF {
 	private SituacaoUF situacao;
 	@Column(name = "DES_UF", length = 45, nullable = false)
 	private String nome;
-	@Column(name = "COD_IBGE", length = 4)
+	@Column(name = "COD_IBGE", length = 4, unique = true)
 	private int codigoIBGE;
 
 	public int getId() {

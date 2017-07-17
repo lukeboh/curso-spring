@@ -27,10 +27,10 @@ public class UFController {
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
-	public String gravar(UF uf) {
+	public ModelAndView gravar(UF uf) {
 		System.out.println(uf);
 		ufDao.gravar(uf);
-		return "/uf/ok";
+		return listar();
 	}
 
 	@RequestMapping(method = RequestMethod.GET)

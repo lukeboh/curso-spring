@@ -6,10 +6,10 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import br.jus.tse.enderecamento.controllers.HomeController;
-import br.jus.tse.enderecamento.daos.ProdutoDAO;
+import br.jus.tse.enderecamento.daos.UFDAO;
 
 @EnableWebMvc
-@ComponentScan(basePackageClasses = { HomeController.class, ProdutoDAO.class })
+@ComponentScan(basePackageClasses = { HomeController.class, UFDAO.class })
 public class AppWebConfiguration {
 
 	@Bean

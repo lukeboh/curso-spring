@@ -8,20 +8,20 @@ import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import br.jus.tse.enderecamento.models.Produto;
+import br.jus.tse.enderecamento.models.UF;
 
 @Repository
 @Transactional
-public class ProdutoDAO {
+public class UFDAO {
 
 	@PersistenceContext
 	private EntityManager manager;
 
-	public void gravar(Produto produto) {
-		manager.persist(produto);
+	public void gravar(UF uf) {
+		manager.persist(uf);
 	}
 
-	public List<Produto> listar() {
-		return manager.createQuery("select p from Produto p", Produto.class).getResultList();
+	public List<UF> listar() {
+		return manager.createQuery("select p from UF p", UF.class).getResultList();
 	}
 }

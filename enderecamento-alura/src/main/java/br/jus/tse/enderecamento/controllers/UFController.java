@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.jus.tse.enderecamento.daos.UFDAO;
 import br.jus.tse.enderecamento.models.UF;
@@ -27,10 +28,12 @@ public class UFController {
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
-	public ModelAndView gravar(UF uf) {
+	public ModelAndView gravar(UF uf, RedirectAttributes redirectAttributes) {
 		System.out.println(uf);
 		ufDao.gravar(uf);
-		return listar();
+		ModelAndView modelAndView = new ModelAndView("redirect:uf");
+		redirectAttributes.addFlashAttribute("sucesso", "UF cadastrado com Sucesso!");
+		return modelAndView;
 	}
 
 	@RequestMapping(method = RequestMethod.GET)

@@ -8,6 +8,7 @@
 </head>
 <body>
 	<h1>Lista de UFs</h1>
+	<div>${sucesso }</div>
 	<table>
 		<tr>
 			<td>Sigla</td>

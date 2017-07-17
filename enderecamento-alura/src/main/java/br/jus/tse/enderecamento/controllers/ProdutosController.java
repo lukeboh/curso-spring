@@ -1,4 +1,4 @@
-package br.com.casadocodigo.loja.controllers;
+package br.jus.tse.enderecamento.controllers;
 
 import java.util.List;
 
@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import br.com.casadocodigo.loja.daos.ProdutoDAO;
-import br.com.casadocodigo.loja.models.Produto;
-import br.com.casadocodigo.loja.models.TipoPreco;
+import br.jus.tse.enderecamento.daos.ProdutoDAO;
+import br.jus.tse.enderecamento.models.Produto;
+import br.jus.tse.enderecamento.models.TipoPreco;
 
 @Controller
 @RequestMapping("produtos")

@@ -1,4 +1,4 @@
-package br.com.casadocodigo.loja.conf;
+package br.jus.tse.enderecamento.conf;
 
 import javax.servlet.Filter;
 

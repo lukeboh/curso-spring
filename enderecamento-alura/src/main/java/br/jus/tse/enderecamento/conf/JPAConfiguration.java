@@ -1,4 +1,4 @@
-package br.com.casadocodigo.loja.conf;
+package br.jus.tse.enderecamento.conf;
 
 import java.util.Properties;
 
@@ -37,7 +37,7 @@ public class JPAConfiguration {
 
 		factoryBean.setJpaProperties(props);
 
-		factoryBean.setPackagesToScan("br.com.casadocodigo.loja.models");
+		factoryBean.setPackagesToScan("br.jus.tse.enderecamento.models");
 
 		return factoryBean;
 	}

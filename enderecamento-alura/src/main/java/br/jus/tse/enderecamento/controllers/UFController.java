@@ -20,7 +20,7 @@ import br.jus.tse.enderecamento.validators.UFValidator;
 import br.jus.tse.enderecamento.models.SituacaoUF;
 
 @Controller
-@RequestMapping("uf")
+@RequestMapping("/uf")
 public class UFController {
 
 	@Autowired

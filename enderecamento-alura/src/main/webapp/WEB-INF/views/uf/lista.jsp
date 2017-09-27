@@ -23,6 +23,7 @@
 				<td>${uf.nome}</td>
 				<td>${uf.situacao}</td>
 				<td>${uf.codigoIBGE}</td>
+				<td>${uf.dataCriacao}</td>
 			</tr>
 		</c:forEach>
 	</table>

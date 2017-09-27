@@ -1,10 +1,14 @@
 package br.jus.tse.enderecamento.models;
 
+import java.util.Calendar;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 public class UF {
@@ -21,6 +25,8 @@ public class UF {
 	private String nome;
 	@Column(name = "COD_IBGE", length = 4, unique = true)
 	private int codigoIBGE;
+	@DateTimeFormat
+	private Calendar dataCriacao;
 
 	public int getId() {
 		return id;
@@ -62,9 +68,43 @@ public class UF {
 		this.situacao = situacao;
 	}
 
+	public Calendar getDataCriacao() {
+		return dataCriacao;
+	}
+
+	public void setDataCriacao(Calendar dataCriacao) {
+		this.dataCriacao = dataCriacao;
+	}
+
 	@Override
 	public String toString() {
-		return "UF [sigla=" + sigla + ", nome=" + nome + ", codigoIBGE=" + codigoIBGE + "]";
+		return "UF [id=" + id + ", sigla=" + sigla + ", situacao=" + situacao + ", nome=" + nome + ", codigoIBGE="
+				+ codigoIBGE + ", dataCriacao=" + dataCriacao + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((sigla == null) ? 0 : sigla.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		UF other = (UF) obj;
+		if (sigla == null) {
+			if (other.sigla != null)
+				return false;
+		} else if (!sigla.equals(other.sigla))
+			return false;
+		return true;
 	}
 
 }

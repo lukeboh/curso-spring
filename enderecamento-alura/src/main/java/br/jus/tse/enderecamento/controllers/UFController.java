@@ -32,7 +32,7 @@ public class UFController {
 	}
 
 	@RequestMapping("form")
-	public ModelAndView form() {
+	public ModelAndView form(UF uf) {
 		ModelAndView modelAndView = new ModelAndView("/uf/form");
 		modelAndView.addObject("situacoesUF", SituacaoUF.values());
 		return modelAndView;
@@ -41,7 +41,7 @@ public class UFController {
 	@RequestMapping(method = RequestMethod.POST)
 	public ModelAndView gravar(@Valid UF uf, BindingResult result, RedirectAttributes redirectAttributes) {
 		if (result.hasErrors()){
-			return form(); 
+			return form(uf); 
 		}
 		ufDao.gravar(uf);
 		ModelAndView modelAndView = new ModelAndView("redirect:uf");

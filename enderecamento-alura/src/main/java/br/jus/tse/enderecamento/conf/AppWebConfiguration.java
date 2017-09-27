@@ -8,14 +8,17 @@ import org.springframework.format.datetime.DateFormatter;
 import org.springframework.format.datetime.DateFormatterRegistrar;
 import org.springframework.format.support.DefaultFormattingConversionService;
 import org.springframework.format.support.FormattingConversionService;
+import org.springframework.web.multipart.MultipartResolver;
+import org.springframework.web.multipart.support.StandardServletMultipartResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import br.jus.tse.enderecamento.controllers.HomeController;
 import br.jus.tse.enderecamento.daos.UFDAO;
+import br.jus.tse.enderecamento.infra.FileSaver;
 
 @EnableWebMvc
-@ComponentScan(basePackageClasses = { HomeController.class, UFDAO.class })
+@ComponentScan(basePackageClasses = { HomeController.class, UFDAO.class, FileSaver.class })
 public class AppWebConfiguration {
 
 	@Bean
@@ -43,6 +46,11 @@ public class AppWebConfiguration {
 		formatterRegistrar.registerFormatters(conversionService);
 
 		return conversionService;
+	}
+
+	@Bean
+	public MultipartResolver multipartResolver() {
+		return new StandardServletMultipartResolver();
 	}
 
 }

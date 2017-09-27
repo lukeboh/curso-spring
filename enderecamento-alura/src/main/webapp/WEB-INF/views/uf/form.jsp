@@ -10,9 +10,9 @@
 </head>
 <body>
 	<form:form action="${s:mvcUrl('UFC#gravar').build()}" method="post"
-		commandName="UF">
+		commandName="UF" enctype="multipart/form-data">
 		<div>
-			<label>Sigla</label> 
+			<label>Sigla</label>
 			<form:input path="sigla" />
 			<form:errors path="sigla" />
 		</div>
@@ -22,19 +22,23 @@
 			<form:errors path="nome" />
 		</div>
 		<div>
-			<label>Código IBGE</label> 
+			<label>Código IBGE</label>
 			<form:input path="codigoIBGE" />
 			<form:errors path="codigoIBGE" />
 		</div>
 		<div>
-			<label>Situação</label> 
+			<label>Situação</label>
 			<form:input path="situacao" />
 			<form:errors path="situacao" />
 		</div>
 		<div>
-			<label>Data de Criação</label> 
+			<label>Data de Criação</label>
 			<form:input path="dataCriacao" />
 			<form:errors path="dataCriacao" />
+		</div>
+
+		<div>
+			<label>Brasão</label> <input name="brasao" type="file" />
 		</div>
 
 		<button type="submit">Cadastrar</button>

@@ -27,6 +27,8 @@ public class UF {
 	private int codigoIBGE;
 	@DateTimeFormat
 	private Calendar dataCriacao;
+	
+	private String brasaoPath;
 
 	public int getId() {
 		return id;
@@ -74,6 +76,14 @@ public class UF {
 
 	public void setDataCriacao(Calendar dataCriacao) {
 		this.dataCriacao = dataCriacao;
+	}
+
+	public String getBrasaoPath() {
+		return brasaoPath;
+	}
+
+	public void setBrasaoPath(String brasaoPath) {
+		this.brasaoPath = brasaoPath;
 	}
 
 	@Override

@@ -24,4 +24,8 @@ public class UFDAO {
 	public List<UF> listar() {
 		return manager.createQuery("select p from UF p", UF.class).getResultList();
 	}
+
+	public UF find(Integer id) {
+		 return manager.find(UF.class, id);
+	}
 }

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
@@ -64,6 +65,14 @@ public class UFController {
 		List<UF> ufs = ufDao.listar();
 		ModelAndView modelAndView = new ModelAndView("/uf/lista");
 		modelAndView.addObject("ufs", ufs);
+		return modelAndView;
+	}
+
+	@RequestMapping("/detalhe/{id}")
+	public ModelAndView detalhe(@PathVariable("id") Integer id) {
+		ModelAndView modelAndView = new ModelAndView("/uf/detalhe");
+		UF uf = ufDao.find(id);
+		modelAndView.addObject("UF", uf);
 		return modelAndView;
 	}
 }
